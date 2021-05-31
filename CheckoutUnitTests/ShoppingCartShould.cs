@@ -17,8 +17,8 @@ namespace CheckoutUnitTests
             _repositoryMock = new Mock<IDataRespository>();
 
             // Get prices from mock database - Starters £4.40, Mains £7.00
-            _repositoryMock.Setup(x => x.GetPrice(FoodCategoryEnum.Starter)).Returns(4.40m);
-            _repositoryMock.Setup(x => x.GetPrice(FoodCategoryEnum.Main)).Returns(7.00m);
+            _repositoryMock.Setup(x => x.GetPriceByFoodCategory(FoodCategoryEnum.Starter)).Returns(4.40m);
+            _repositoryMock.Setup(x => x.GetPriceByFoodCategory(FoodCategoryEnum.Main)).Returns(7.00m);
 
             _shoppingCart = new Checkout.Models.ShoppingCart();
             _service = new CheckoutService(_repositoryMock.Object, _shoppingCart);            
@@ -55,7 +55,7 @@ namespace CheckoutUnitTests
             _service.AddToCart(new MenuItem() { Name = "soup", Category = FoodCategoryEnum.Starter });
             _service.AddToCart(new MenuItem() { Name = "chicken", Category = FoodCategoryEnum.Main });
 
-            _repositoryMock.Verify(x => x.GetPrice(It.IsAny<FoodCategoryEnum>()), Times.Exactly(2));
+            _repositoryMock.Verify(x => x.GetPriceByFoodCategory(It.IsAny<FoodCategoryEnum>()), Times.Exactly(2));
         }
 
         [Test]

@@ -2,6 +2,6 @@
 {
     public interface IDataRespository
     {
-        decimal GetPrice(FoodCategoryEnum category);
+        decimal GetPriceByFoodCategory(FoodCategoryEnum category);
     }
 }

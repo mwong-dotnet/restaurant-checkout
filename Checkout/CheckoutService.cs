@@ -17,7 +17,7 @@ namespace Checkout
             _cart = cart;
         }
 
-        private decimal GetMenuItemPrice(FoodCategoryEnum category) => _respository.GetPrice(category);
+        private decimal GetPriceByFoodCategory(FoodCategoryEnum category) => _respository.GetPriceByFoodCategory(category);
 
         public void AddToCart(IMenuItem menuItem)
         {
@@ -25,7 +25,7 @@ namespace Checkout
 
             if (orderLine is null)
             {
-                menuItem.Price = GetMenuItemPrice(menuItem.Category);
+                menuItem.Price = GetPriceByFoodCategory(menuItem.Category);
                 _cart.Add(new OrderLine() { MenuItem = menuItem, Quantity = 1 });
             }
             else
