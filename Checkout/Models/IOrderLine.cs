@@ -4,6 +4,6 @@
     {
         IMenuItem MenuItem { get; set; }
         int Quantity { get; set; }
-        decimal Price { get; set; }
+        decimal Price { get; }
     }
 }

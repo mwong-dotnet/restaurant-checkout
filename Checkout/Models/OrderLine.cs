@@ -4,6 +4,6 @@
     {
         public IMenuItem MenuItem { get; set; }
         public int Quantity { get; set; }
-        public decimal Price { get => Quantity * MenuItem.Price; set => Price = value; }
+        public decimal Price { get => Quantity * MenuItem.Price; }
     }
 }
