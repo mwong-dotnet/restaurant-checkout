@@ -50,7 +50,7 @@ namespace CheckoutUnitTests
         }
 
         [Test]
-        public void GetPriceOfMenuItemsWhenAddingToCart()
+        public void CallGetPriceByFoodCategoryWhenAddingMenuItemsToCart()
         {
             _service.AddToCart(new MenuItem() { Name = "soup", Category = FoodCategoryEnum.Starter });
             _service.AddToCart(new MenuItem() { Name = "chicken", Category = FoodCategoryEnum.Main });
