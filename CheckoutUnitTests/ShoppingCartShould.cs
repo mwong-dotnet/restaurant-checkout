@@ -59,7 +59,7 @@ namespace CheckoutUnitTests
         }
 
         [Test]
-        public void ShouldCalculateCorrectUniqueItemsAdded()
+        public void CalculateCorrectUniqueItemsAdded()
         {
             var starter = new MenuItem() { Name = "salad", Category = FoodCategoryEnum.Starter };
             var main = new MenuItem() { Name = "steak", Category = FoodCategoryEnum.Main };
@@ -73,7 +73,7 @@ namespace CheckoutUnitTests
 
 
         [Test]
-        public void ShouldCalculateCorrectNumberOfItemsAdded()
+        public void CalculateCorrectNumberOfItemsAdded()
         {
             _service.AddToCart(new MenuItem() { Name = "soup", Category = FoodCategoryEnum.Starter });
             _service.AddToCart(new MenuItem() { Name = "salad", Category = FoodCategoryEnum.Starter });
@@ -83,7 +83,7 @@ namespace CheckoutUnitTests
         }
 
         [Test]
-        public void ShouldBeAbleToRemoveItems()
+        public void BeAbleToRemoveItems()
         {
             var starter = new MenuItem() { Name = "salad", Category = FoodCategoryEnum.Starter };
 
@@ -95,7 +95,7 @@ namespace CheckoutUnitTests
         }
 
         [Test]
-        public void ShouldIncreaseQuantityAddingSameItem()
+        public void IncreaseQuantityAddingSameItem()
         {
             var main = new MenuItem() { Name = "steak", Category = FoodCategoryEnum.Main };
 
@@ -108,7 +108,7 @@ namespace CheckoutUnitTests
         }
 
         [Test]
-        public void ShouldRemoveItemIfQuantityUpdatedToZero()
+        public void RemoveItemIfQuantityUpdatedToZero()
         {
             var starter = new MenuItem() { Name = "soup", Category = FoodCategoryEnum.Starter };
             var main = new MenuItem() { Name = "steak", Category = FoodCategoryEnum.Main };
@@ -121,7 +121,7 @@ namespace CheckoutUnitTests
         }
 
         [Test]
-        public void ShouldBeAbleToUpdateQuantityOfItem()
+        public void BeAbleToUpdateQuantityOfItem()
         {
             var main = new MenuItem() { Name = "steak", Category = FoodCategoryEnum.Main };
 
@@ -142,7 +142,7 @@ namespace CheckoutUnitTests
         }
 
         [Test]
-        public void ShouldHaveNothingToPayIfEmpty()
+        public void HaveNothingToPayIfEmpty()
         {
             Assert.That(_service.CalculateTotalBill(), Is.EqualTo(0m));
         }
