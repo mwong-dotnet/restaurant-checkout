@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Checkout", "Checkout\Checko
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantUnitTests", "CheckoutUnitTests\RestaurantUnitTests.csproj", "{048ED56B-F98D-4681-B44B-736B364C1E6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTests", "XUnitTests\XUnitTests.csproj", "{D5B6D668-E641-4440-B464-CD7079E93FB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{048ED56B-F98D-4681-B44B-736B364C1E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{048ED56B-F98D-4681-B44B-736B364C1E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{048ED56B-F98D-4681-B44B-736B364C1E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5B6D668-E641-4440-B464-CD7079E93FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5B6D668-E641-4440-B464-CD7079E93FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5B6D668-E641-4440-B464-CD7079E93FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5B6D668-E641-4440-B464-CD7079E93FB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
