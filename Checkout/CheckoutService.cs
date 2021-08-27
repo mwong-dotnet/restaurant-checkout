@@ -58,7 +58,9 @@ namespace Checkout
         public int GetTotalItems() => _cart.GetTotalItemsCount();
 
         public decimal CalculateTotalBill() => _cart.GetTotalPrice();
+        
+        public IOrderLine GetAddedItem(IMenuItem menuItem) => GetAddedItem(menuItem.Name);
 
-        public IOrderLine GetAddedItem(IMenuItem menuItem) => _cart.GetItem(menuItem.Name);
+        public IOrderLine GetAddedItem(string foodName) => _cart.GetItem(foodName);
     }
 }

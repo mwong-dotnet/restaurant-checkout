@@ -4,7 +4,7 @@ using FluentAssertions;
 using Moq;
 using Xunit;
 
-namespace XUnitTests
+namespace XUnitCheckoutTests
 {
     public class ShoppingCartShould
     {
@@ -24,7 +24,6 @@ namespace XUnitTests
             _shoppingCart = new Checkout.Models.ShoppingCart();
             _service = new CheckoutService(_repositoryMock.Object, _shoppingCart);
         }
-
 
         [Fact]
         public void CalculateBillForMultipleAddedItems()
