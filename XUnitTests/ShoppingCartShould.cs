@@ -1,7 +1,7 @@
-using System;
 using Checkout;
 using FluentAssertions;
 using Moq;
+using System;
 using Xunit;
 
 namespace XUnitCheckoutTests
@@ -68,7 +68,7 @@ namespace XUnitCheckoutTests
             _service.AddToCart(main);
             _service.AddToCart(main);
 
-           _service.GetUniqueItemsCount().Should().Be(2);
+            _service.GetUniqueItemsCount().Should().Be(2);
         }
 
 
@@ -80,7 +80,6 @@ namespace XUnitCheckoutTests
             _service.AddToCart(new MenuItem() { Name = "steak", Category = FoodCategoryEnum.Main });
 
             _service.GetTotalItems().Should().Be(3);
-
         }
 
         [Fact]
@@ -92,7 +91,7 @@ namespace XUnitCheckoutTests
             _service.AddToCart(starter);
             _service.RemoveFromCart(starter);
 
-            _service.GetTotalItems().Should().Be(0, because: "all items have been removed from basket");
+            _service.GetTotalItems().Should().Be(0, because: "all items should have been removed from basket");
         }
 
         [Fact]
@@ -140,13 +139,13 @@ namespace XUnitCheckoutTests
 
         [Fact]
         public void BeEmptyIfNoOrdersPlaced()
-        {   
+        {
             _service.GetTotalItems().Should().Be(0, because: "no orders have been placed");
         }
 
         [Fact]
-        public void HaveNothingToPayIfEmpty()
-        {            
+         public void HaveNothingToPayIfEmpty()
+        {
             _service.CalculateTotalBill().Should().Be(0m, because: "there is nothing to pay");
         }
 
@@ -156,8 +155,8 @@ namespace XUnitCheckoutTests
             var starter = new MenuItem() { Name = "soup", Category = FoodCategoryEnum.Starter };
 
             _service.AddToCart(new MenuItem() { Name = "soup", Category = FoodCategoryEnum.Starter });
-            
-            Action act = () => _service.UpdateQuantity(starter, -50);            
+
+            Action act = () => _service.UpdateQuantity(starter, -50);
 
             act.Should().Throw<ArgumentOutOfRangeException>()
                         .WithMessage("Please specify a quantity greater than 0 (Parameter 'quantity')");
